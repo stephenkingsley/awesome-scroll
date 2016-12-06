@@ -13,6 +13,8 @@ app.use(webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath,
 }));
 
+app.use(Express.static('example'));
+
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'example/index.html'));
 });
