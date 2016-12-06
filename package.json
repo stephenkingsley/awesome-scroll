@@ -1,8 +1,8 @@
 {
   "name": "awesome-scroll",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A simple and fast container to monitor elements as you scroll",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "dev": "node devServer.js",
     "build": "npm run build:commonjs && npm run build:es",

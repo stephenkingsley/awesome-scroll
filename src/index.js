@@ -1,5 +1,5 @@
-import { isInBrowser } from './src/constants';
-import ScrollMonitorContainer from './src/container';
+import { isInBrowser } from './constants';
+import ScrollMonitorContainer from './container';
 
 
 const scrollMonitor = new ScrollMonitorContainer(isInBrowser ? document.body : null);

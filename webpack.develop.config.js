@@ -5,7 +5,7 @@ const env = process.env.NODE_ENV;
 
 const config = {
   entry: {
-    awesomeScroll: './index',
+    awesomeScroll: './src/index',
   },
   output: {
     path: path.join(__dirname, 'dist'),
