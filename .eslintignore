@@ -1,0 +1,8 @@
+node_modules
+scripts
+npm-debug.log
+.DS_Store
+*.log
+stats.json
+dist/
+example
