@@ -1,7 +1,23 @@
 # awesome-scroll
-A simple and fast container to monitor elements as you scroll
+A simple and fast container to monitor elements as you scroll [https://stephenkingsley.github.io/stress.html](https://stephenkingsley.github.io/stress.html)
 
 inspiration from [`scrollMonitor`](https://github.com/stutrek/scrollMonitor) @stutrek
+
+## BASIC USAGE
+
+```js
+import awesomeScroll from "awesome-scroll";
+
+const scrollElement = document.getElementById("scrollElement");
+const watcherElement = awesomeScroll.create(scrollElement);
+
+watcherElement.enterViewport(function() {
+  console.log('I have entered the viewport');
+});
+watcherElement.exitViewport(function() {
+  console.log('I have left the viewport');
+});
+```
 
 ## DEMO
 
@@ -17,13 +33,10 @@ npm run dev
 
 open [http://localhost:3000](http://localhost:3000)
 
-there are some example in `/example` folder
+### there are some example in `/example` folder
 
-- Stress Test - Test with as many watchers as you'd like
-- Stress Test in a div - Note how much slower scrolling a div is than scrolling the body.
-- Nested scrollers
-- Fixed Positioning and Locking
-- Anchored section headers
-- Complex sidebar behavior
+ - [`Stress element`](https://stephenkingsley.github.io/stress.html)
 
-for example, you can open [http://localhost:3000/fixed.html](http://localhost:3000/fixed.html) to saw the `fixed.html` demo
+ - [`fixed element`](https://stephenkingsley.github.io/fixed.html)
+
+ - [`inner scroll`](https://stephenkingsley.github.io/divInADiv.html)
