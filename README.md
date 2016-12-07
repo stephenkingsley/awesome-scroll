@@ -21,6 +21,14 @@ watcherElement.exitViewport(function() {
 
 ## DEMO
 
+ - [👉 Stress element](https://stephenkingsley.github.io/stress.html)
+
+ - [👉 fixed element](https://stephenkingsley.github.io/fixed.html)
+
+ - [👉 inner scroll](https://stephenkingsley.github.io/divInADiv.html)
+
+👇 localhost demo
+
 ```shell
 git clone https://github.com/stephenkingsley/awesome-scroll.git
 
@@ -34,9 +42,3 @@ npm run dev
 open [http://localhost:3000](http://localhost:3000)
 
 ### there are some example in `/example` folder
-
- - [`Stress element`](https://stephenkingsley.github.io/stress.html)
-
- - [`fixed element`](https://stephenkingsley.github.io/fixed.html)
-
- - [`inner scroll`](https://stephenkingsley.github.io/divInADiv.html)
