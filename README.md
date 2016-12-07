@@ -5,6 +5,14 @@ inspiration from [`scrollMonitor`](https://github.com/stutrek/scrollMonitor) @st
 
 ## BASIC USAGE
 
+first
+
+```shell
+npm install awesome-scroll --save
+```
+
+and in your code
+
 ```js
 import awesomeScroll from "awesome-scroll";
 
