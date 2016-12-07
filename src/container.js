@@ -38,18 +38,17 @@ const scrollTop = (element) => {
   if (isOnServer) {
     height = 0;
   }
-
   if (element === document.body) {
     height = window.pageYOffset ||
       (document.documentElement && document.documentElement.scrollTop) ||
       document.body.scrollTop;
   } else {
-    height = element.scrollHeight;
+    height = element.scrollTop;
   }
   return height;
 };
 
-export default class ScrollMonitorContainer {
+class ScrollMonitorContainer {
   constructor(item, parentWatcher) {
     const self = this;
     this.item = item;
@@ -161,12 +160,6 @@ export default class ScrollMonitorContainer {
     }
   }
 
-  // DOMListener(event) {
-  //   console.log('got scroll');
-  //   this.setStateFromDOM(event);
-  //   this.updateAndTriggerWatchers(event);
-  // }
-
   setStateFromDOM(event) {
     const viewportTop = scrollTop(this.item);
     const viewportHeight = getViewportHeight(this.item);
@@ -235,3 +228,5 @@ export default class ScrollMonitorContainer {
     return this.create(item, offsets);
   }
 }
+
+module.exports = ScrollMonitorContainer;

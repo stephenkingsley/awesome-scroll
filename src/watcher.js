@@ -10,7 +10,7 @@ import {
   defaultOffsets,
 } from './constants';
 
-export default class ElementWatcher {
+class ElementWatcher {
   constructor(containerWatcher, watchItem, offsets) {
     const self = this;
 
@@ -256,3 +256,5 @@ export default class ElementWatcher {
     this.locked = false;
   }
 }
+
+module.exports = ElementWatcher;

@@ -30,13 +30,13 @@
 			width: 100%;
 		}
 		.one {
-			background-color: silver;
+			background-color: #0097A7;
 		}
 		.two {
-			background-color: #c00;
+			background-color: #00838F;
 		}
 		.three {
-			background-color: #00c;
+			background-color: #006064;
 		}
 		h1 {
 			margin-top: 0;
@@ -76,61 +76,70 @@
 			overflow-y: auto;
 			-webkit-overflow-scrolling: touch;
 		}
+		.center {
+			text-align: center;
+		}
 	​</style>
 </head>
 <body>
-<div>
-	<div class="screen one">
-		<div class="content scroller">
-			<h1>Here are a couple of boxes from the stress test.</h1>
-			<div class="insert-boxes-here"></div>
-		</div>
-	</div>
-	<div class="screen two">
-		<div class="content scroller">
-			<h1>And a few more, just to prove that it works down here too.</h1>
-			<div class="insert-boxes-here"></div>
-		</div>
-	</div>
-	<div class="screen three">
-		<div class="content scroller">
-			<h1>And a scroller in a scroller.</h1>
-			<div class="internal scroller">
-				<h2>Just for you.</h2>
+	<div>
+		<div class="screen one">
+			<div class="content scroller">
+				<h1>Here are a couple of boxes from the stress test.</h1>
 				<div class="insert-boxes-here"></div>
 			</div>
-			<div class="insert-boxes-here"></div>
+		</div>
+		<div class="screen two">
+			<div class="content scroller">
+				<h1>And a few more, just to prove that it works down here too.</h1>
+				<div class="insert-boxes-here"></div>
+			</div>
+		</div>
+		<div class="screen three">
+			<div class="content scroller">
+				<h1>And a scroller in a scroller.</h1>
+				<div class="internal scroller">
+					<h2>Just for you.</h2>
+					<div class="insert-boxes-here"></div>
+				</div>
+				<div class="insert-boxes-here"></div>
+			</div>
 		</div>
 	</div>
-</div>
-<a href="https://github.com/stephenkingsley/awesome-scroll"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="/static/awesomeScroll.js"></script>
-<script type="text/javascript">
-	var boxHtml = (new Array(100)).join('<span class="box"></span>');
-	$('.insert-boxes-here').html(boxHtml);
 
-	function listener(event, watcher) {
-		if (!watcher.isInViewport) {
-			return;
-		} else if (watcher.isFullyInViewport) {
-			watcher.watchItem.style.backgroundColor = '#fcc';
-		} else if (watcher.isAboveViewport) {
-			watcher.watchItem.style.backgroundColor = '#ccf';
-		} else if (watcher.isBelowViewport) {
-			watcher.watchItem.style.backgroundColor = '#ffc';
+	<a href="https://github.com/stephenkingsley/awesome-scroll">
+		<img style="position: fixed; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
+	</a>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="/static/awesomeScroll.js"></script>
+	<script type="text/javascript">
+		var boxHtml = (new Array(100)).join('<span class="box"></span>');
+		$('.insert-boxes-here').html(boxHtml);
+
+		function listener() {
+			if (!this.isInViewport) {
+				return;
+			} else if (this.isFullyInViewport) {
+				this.watchItem.style.backgroundColor = '#fcc';
+			} else if (this.isAboveViewport) {
+				this.watchItem.style.backgroundColor = '#ccf';
+			} else if (this.isBelowViewport) {
+				this.watchItem.style.backgroundColor = '#ffc';
+			}
 		}
-	}
 
-	$('.scroller').each(function (i, element) {
-		var boxes = $('> .insert-boxes-here > .box', element);
-		var container = scrollMonitor.createContainer(element);
-		boxes.each(function (i, boxEl) {
-			var watcher = container.create(boxEl);
-			watcher.stateChange(listener);
-			listener(null, watcher);
+		$('.scroller').each(function (i, element) {
+			var boxes = $('> .insert-boxes-here > .box', element);
+			console.log(element);
+			var container = scrollMonitor.createContainer(element);
+			boxes.each(function (i, boxEl) {
+				// console.log('=======', boxEl);
+				var watcher = container.create(boxEl);
+				watcher.stateChange(listener);
+				listener.call(watcher)
+			});
 		});
-	});
 
-</script>
+	</script>
 </body>
