@@ -1,8 +1,6 @@
 # awesome-scroll
 A simple and fast container to monitor elements as you scroll [https://stephenkingsley.github.io/stress.html](https://stephenkingsley.github.io/stress.html)
 
-inspiration from [`scrollMonitor`](https://github.com/stutrek/scrollMonitor) @stutrek
-
 ## BASIC USAGE
 
 first
