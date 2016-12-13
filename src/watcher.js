@@ -52,7 +52,6 @@ class ElementWatcher {
     let listener;
 
     const triggerCallbackArray = (listeners, event) => {
-      // console.log('listeners.length===', listeners.length);
       if (listeners.length === 0) {
         return;
       }
@@ -180,6 +179,8 @@ class ElementWatcher {
     wasFullyInViewport = this.isFullyInViewport;
     wasAboveViewport = this.isAboveViewport;
     wasBelowViewport = this.isBelowViewport;
+
+    this.isAboveViewportArr = [];
   } // constructor end
 
   on(event, callback, isOne) {

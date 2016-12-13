@@ -2,12 +2,12 @@ import { isInBrowser } from './constants';
 import ScrollMonitorContainer from './container';
 
 
-const scrollMonitor = new ScrollMonitorContainer(isInBrowser ? document.body : null);
-scrollMonitor.setStateFromDOM(null);
-scrollMonitor.listenToDOM();
+const awesomeScroll = new ScrollMonitorContainer(isInBrowser ? document.body : null);
+awesomeScroll.setStateFromDOM(null);
+awesomeScroll.listenToDOM();
 
 if (isInBrowser) {
-  window.scrollMonitor = scrollMonitor;
+  window.awesomeScroll = awesomeScroll;
 }
 
-module.exports = scrollMonitor;
+module.exports = awesomeScroll;

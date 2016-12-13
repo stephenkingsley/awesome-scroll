@@ -17,12 +17,19 @@ import awesomeScroll from "awesome-scroll";
 const scrollElement = document.getElementById("scrollElement");
 const watcherElement = awesomeScroll.create(scrollElement);
 
-watcherElement.enterViewport(function() {
-  console.log('I have entered the viewport');
-});
-watcherElement.exitViewport(function() {
-  console.log('I have left the viewport');
-});
+const addClass = () => {
+  if (!this.isInViewport) {
+    return;
+  } else if (this.isFullyInViewport) {
+    this.watchItem.style.backgroundColor = '#fcc';
+  } else if (this.isAboveViewport) {
+    this.watchItem.style.backgroundColor = '#ccf';
+  } else if (this.isBelowViewport) {
+    this.watchItem.style.backgroundColor = '#ffc';
+  }
+}
+
+watcherElement.stateChange(addClass);
 ```
 
 ## DEMO
